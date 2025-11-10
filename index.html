@@ -3,40 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>My Open Source Project</title>
+    <meta name="description" content="A simple, modern landing page for the project">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="#home">myopenSource</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section id="home">
-            <h1>Welcome to Our Website</h1>
-            <p>This is the home section.</p>
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <h1>Beautiful, simple UI for your open source project</h1>
+                    <p class="lead">Clean design, responsive layout, and accessible components — ready to customize and ship.</p>
+                    <div class="hero-ctas">
+                        <a class="btn primary" href="#features">Explore features</a>
+                        <a class="btn ghost" href="#contact">Get in touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="card-sample">
+                        <h3>Fast</h3>
+                        <p>Minimal, performant CSS and layout.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>This is the about section.</p>
+
+        <section id="features" class="features container">
+            <h2 class="section-title">What you get</h2>
+            <div class="grid">
+                <article class="feature">
+                    <h3>Responsive</h3>
+                    <p>Looks great on phones, tablets, and desktops.</p>
+                </article>
+                <article class="feature">
+                    <h3>Customizable</h3>
+                    <p>Color variables and simple classes make theming easy.</p>
+                </article>
+                <article class="feature">
+                    <h3>Accessible</h3>
+                    <p>Semantic markup and focus styles for keyboard users.</p>
+                </article>
+            </div>
         </section>
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>This is the services section.</p>
+
+        <section id="about" class="container about">
+            <h2 class="section-title">About this project</h2>
+            <p>This repository is a lightweight starting point for open-source landing pages. Use the styles in <code>style.css</code> and tweak variables to match your brand.</p>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>This is the contact section.</p>
+
+        <section id="contact" class="container contact">
+            <h2 class="section-title">Contact</h2>
+            <p>Want support or to contribute? Open an issue or reach out on the repo.</p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Manu omar. All rights reserved.</p>   
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2025 kbrakesh26 • Built with care.</p>
+            <nav aria-label="Social">
+                <a href="#" aria-label="GitHub">GitHub</a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>
