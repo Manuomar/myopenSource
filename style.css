@@ -180,3 +180,17 @@ body{
 /* Small utilities */
 .muted{color:var(--muted)}
 .code{background:#071022;padding:0.15rem 0.4rem;border-radius:6px;color:var(--accent-2)}
+
+/* First contribution: extra button hover effect without changing existing code */
+.btn.primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(46,229,196,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.ghost:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(94,234,212,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
