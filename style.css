@@ -7,6 +7,8 @@
     --card: #0b1226;
     --radius: 12px;
     --container: 1100px;
+    --text: #e6eef8;
+    --focus: rgba(94,234,212,0.18);
 }
 
 *{
@@ -22,7 +24,7 @@ html,body{
 body{
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     background: linear-gradient(180deg,var(--bg) 0%, #071126 100%);
-    color: #e6eef8;
+    color: var(--text);
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     line-height: 1.5;
@@ -63,6 +65,17 @@ body{
     text-decoration:none;
     font-size:1.125rem;
 }
+
+.menu-toggle{
+    display:none;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size:1.25rem;
+}
+
+.header-actions{display:flex; align-items:center; gap:0.5rem}
+.theme-toggle{background:transparent; border:none; color:var(--text); font-size:1.1rem}
 
 .site-nav ul{
     display:flex;
@@ -119,6 +132,7 @@ body{
     transition: transform .14s ease, box-shadow .14s ease;
 }
 .btn:focus{outline:2px solid rgba(94,234,212,0.14); outline-offset:2px}
+.btn:focus{outline-color:var(--focus)}
 .btn.primary{
     background: linear-gradient(90deg,var(--accent), #34d399);
     color:#052022;
@@ -173,8 +187,28 @@ body{
     .grid{grid-template-columns: repeat(2,1fr)}
 }
 @media (max-width: 560px){
-    .site-nav ul{display:none} /* simple hide for small screens; you can add a mobile menu later */
+    .site-nav ul{display:none} /* mobile menu: toggled by JS */
+    .menu-toggle{display:inline-flex}
     .grid{grid-template-columns:1fr}
+}
+
+/* Simple contact form styles */
+.contact-form{display:flex;flex-direction:column;gap:0.5rem;max-width:560px}
+.contact-form label{font-weight:600;color:var(--text)}
+.contact-form input,.contact-form textarea{padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--focus);outline-offset:2px}
+.form-status{color:var(--accent);margin-top:0.4rem}
+
+/* Light theme override (for manual toggle) */
+:root.light{
+    --bg: #f7fafc;
+    --surface: #ffffff;
+    --muted: #475569;
+    --accent: #0ea5a4;
+    --accent-2: #6d28d9;
+    --card: #ffffff;
+    --text: #0b1220;
+    --focus: rgba(14,165,164,0.14);
 }
 
 /* Small utilities */

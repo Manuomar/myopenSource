@@ -6,6 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#071126">
     <title>My Open Source Project</title>
     <meta name="description" content="A simple, modern landing page for the project">
 </head>
@@ -13,6 +15,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <a class="logo" href="#home">myopenSource</a>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
             <nav class="site-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -21,6 +24,9 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            </div>
         </div>
     </header>
 
@@ -69,7 +75,21 @@
 
         <section id="contact" class="container contact">
             <h2 class="section-title">Contact</h2>
-            <p>Want support or to contribute? Open an issue or reach out on the repo.</p>
+            <p>Want support or to contribute? Open an issue or reach out on the repo or use the contact form below.</p>
+
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button class="btn primary" type="submit">Send message</button>
+                <p class="form-status" aria-live="polite"></p>
+            </form>
         </section>
     </main>
 
@@ -81,5 +101,6 @@
             </nav>
         </div>
     </footer>
+    <script src="scripts.js" defer></script>
 </body>
 </html>

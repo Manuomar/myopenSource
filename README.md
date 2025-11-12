@@ -80,6 +80,44 @@ Now you can:
 - Improve documentation or fix typos
 - Suggest features or enhancements
 
+---
+
+## ✅ What I added (improvements)
+
+I implemented a set of small, high-value features to modernize this static site:
+
+- Responsive header with a mobile menu (hamburger) and accessible navigation.
+- Dark / Light theme toggle (persisted in localStorage) and CSS variable-based theming.
+- Contact form (static) wired to Formspree — update the `action` on the form in `index.html` with your Formspree form ID.
+- Basic PWA support: `manifest.json` and a minimal `sw.js` service worker that caches the site shell.
+- `scripts.js` containing the interactive behavior (menu, theme toggle, form submit handler, SW registration).
+- Small CSS improvements: focus states, theme variables, and contact form styles.
+
+## 🔧 How to test locally
+
+1. Open `index.html` in your browser (double-click or drag into browser).
+2. On small screen widths, click the ☰ button to open the mobile navigation.
+3. Click the moon/sun icon to toggle theme — your choice is saved between reloads.
+4. Test the contact form: replace the `action="https://formspree.io/f/your-form-id"` in `index.html` with your Formspree endpoint or another form backend. The client-side JS uses `fetch` and shows basic status messages.
+5. To test PWA and the service worker, serve the site over a local static server (browsers block SWs on file://). A simple way with Node is below.
+
+## 🧪 Quick local server (optional)
+
+If you have Node installed, you can run a simple static server. From the project root run:
+
+```powershell
+npx http-server -c-1 .
+```
+
+Then open the served URL (usually `http://127.0.0.1:8080`) to test service worker registration and PWA install.
+
+## ⚠️ Notes & next steps
+
+- Add real PWA icons at `icons/icon-192.png` and `icons/icon-512.png` for installability.
+- Replace the Formspree form ID in `index.html` with your own endpoint to receive form messages.
+- If you want, I can add CI (GitHub Actions) to lint CSS/JS and auto-deploy to GitHub Pages.
+
+
 ### Step 6: Stage and Commit Your Changes
 ```
 git add .
